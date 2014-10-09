@@ -7569,13 +7569,10 @@ public partial class NodeXLControl : FrameworkElement
         IEdge oClickedEdge;
 
         Boolean bEdgeClicked =
-    TryGetEdgeFromPoint(oMouseLocation, out oClickedEdge);
+            TryGetEdgeFromPoint(oMouseLocation, out oClickedEdge);
 
         Boolean bVertexClicked =
             TryGetVertexFromPoint(oMouseLocation, out oClickedVertex);
-
-
-            
 
         FireGraphMouseDown(e, oClickedVertex);
 
@@ -7588,10 +7585,7 @@ public partial class NodeXLControl : FrameworkElement
                 FireVertexDoubleClick(oClickedVertex);
             }
         }
-
-
-        //TODO else if
-        if (bEdgeClicked)
+        else if (bEdgeClicked)
         {
             FireEdgeClick(oClickedEdge);
 
